@@ -25,7 +25,7 @@
       <input type="submit" name="送信" >
     </form>
 
-    <% result_a = connection.exec("select weight, give_for from crops where give_for = '自家消費';") %>
+    <% result_a = connection.exec("select weight, give_for from crops where give_for != '自家消費';") %>
     <% data_a = [] %>
     <% result_a.each do |record| %>
       <%  data_a << "ゴーヤの大きさ：#{record["weight"]}　売った相手：#{record["give_for"]}" %>
